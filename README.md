@@ -14,12 +14,18 @@
 
 
 ```javascript
-const root = ReactDOM.createRoot(document.getElementById('root'))
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './store';
+import App from './App';
+
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    <AppProvider>
+    <Provider projects={projects}>
       <App />
-    </AppProvider>
+    </Provider>
   </React.StrictMode>
-)
+);
 ```
